@@ -345,8 +345,9 @@ PRODUCT_PACKAGES += \
     libvideoutils \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.keymaster@3.0-impl-qti \
-    consumerir.msm8953 \
+    consumerir.default \
     gf_fingerprint.goodix.default \
+    libgf_algo \
     libgf_ca \
     libgf_hal \
     libkeymasterdeviceutils \

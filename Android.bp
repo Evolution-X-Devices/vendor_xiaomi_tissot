@@ -6037,6 +6037,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -7169,8 +7170,9 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libmmcamera_arc_ofilm_ov12a10_eeprom.so",
             ],
             shared_libs: [
-                "libcutils",
                 "liblog",
+                "libcutils",
+                "libmmcamera_eeprom_util",
                 "libc++",
                 "libc",
                 "libm",
@@ -7222,8 +7224,9 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libmmcamera_arc_ov12a10_eeprom.so",
             ],
             shared_libs: [
-                "libcutils",
                 "liblog",
+                "libcutils",
+                "libmmcamera_eeprom_util",
                 "libc++",
                 "libc",
                 "libm",
@@ -7614,6 +7617,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -7742,10 +7746,13 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libc",
+                "libandroid",
+                "liblog",
             ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -7979,7 +7986,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "consumerir.msm8953",
+    name: "consumerir.default",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -7987,7 +7994,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/hw/consumerir.msm8953.so",
+                "proprietary/vendor/lib64/hw/consumerir.default.so",
             ],
             shared_libs: [
                 "liblog",
@@ -8034,7 +8041,35 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgf_algo",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgf_algo.so",
+            ],
+            shared_libs: [
+                "libQSEEComAPI",
+                "libhardware",
+                "libc",
+                "libm",
+                "libdl",
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -8061,6 +8096,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -8079,6 +8115,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "libutils",
+                "libgf_algo",
                 "libgf_ca",
                 "libc",
                 "libm",
@@ -8088,6 +8125,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -8212,6 +8250,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
